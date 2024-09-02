@@ -10,7 +10,7 @@ export default function Results() {
     async function fetchData() {
       try {
         const response = await fetch(
-          `http://localhost:3000/results?userEmail=${userEmail}`,
+          `https://ping-pong-backend-n027.onrender.com/results?userEmail=${userEmail}`,
           {
             method: "GET",
           }

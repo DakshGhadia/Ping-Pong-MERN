@@ -8,7 +8,9 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 4000;
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://ping-pong-frontend.onrender.com', // Allow requests from this origin
+}));
 app.use("/results", router);
 
 mongoose

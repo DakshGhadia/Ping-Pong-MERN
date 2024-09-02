@@ -74,7 +74,7 @@ export default function PlayerContainer({
       whoWon: name,
     };
     try {
-      const response = await fetch("http://localhost:3000/results", {
+      const response = await fetch("https://ping-pong-backend-n027.onrender.com/results", {
         method: "POST",
         headers: {
           "Content-Type": "application/json", // Add this header

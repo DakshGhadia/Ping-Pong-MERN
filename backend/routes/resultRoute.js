@@ -4,7 +4,6 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   try {
-    console.log(req.body);
     if (
       req.body.player1name === undefined ||
       req.body.player2name === undefined ||
@@ -31,10 +30,8 @@ router.post("/", async (req, res) => {
     };
 
     const result = await Result.create(newResult);
-    console.log("recieved data");
     return res.status(201).send(result);
   } catch (error) {
-    console.log(error);
     res.status(500).send({ message: error.message });
   }
 });
@@ -43,7 +40,6 @@ router.get("/", async (req, res) => {
   try {
     const { userEmail } = req.query;
     const query = { email: userEmail };
-    console.log("Received email:", userEmail);
     const results = await Result.find(query);
     return res.status(200).json(results);
   } catch (error) {
